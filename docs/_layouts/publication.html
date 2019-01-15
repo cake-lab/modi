@@ -11,11 +11,11 @@ Authors:
 {% assign authors = site.authors | where_exp: 'item', 'page.authors_list contains item.short_name' %}
 {% for author in authors %}
     {% if forloop.rindex > 2 %}
-        <a href={{ author.url }}>{{ author.name }}</a>, 
+        <a href={{ author.url | relative_url}}>{{ author.name }}</a>, 
     {% elsif forloop.rindex == 2 %}
-        <a href={{ author.url }}>{{ author.name }}</a> and 
+        <a href={{ author.url | relative_url}}>{{ author.name }}</a> and 
     {% else %}
-        <a href={{ author.url }}>{{ author.name }}</a>
+        <a href={{ author.url | relative_url}}>{{ author.name }}</a>
     {% endif %}
     
 {% endfor %}
@@ -26,7 +26,7 @@ Authors:
 </h3>
 
 <p>
-    <a href={{ page.pdf_location }}>Download</a>
+    <a href={{ page.pdf_location | relative_url}}>Download</a>
 </p>
 
 <p>
