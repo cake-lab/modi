@@ -7,5 +7,7 @@ role:
 organization: Worcester Polytechnic Institute
 organizaton_short: WPI
 homepage: https://web.cs.wpi.edu/~sli8/
+
+layout: author
 ---
 
