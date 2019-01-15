@@ -1,0 +1,29 @@
+---
+layout: default
+title: Publications
+---
+
+<h2> Publications from Cake Lab </h2>
+
+{% assign sorted_publications = site.publications | sort: 'date_published' %}
+<ul>
+  {% for publication in sorted_publications %}
+    <li>
+      <h3><a href="{{ publication.url }}">{{ publication.title }}</a></h3>
+      <h4>Authors: 
+        {% assign authors = site.authors | where_exp: 'item', 'publication.authors_list contains item.short_name' %}
+        {% for author in authors %}
+            {% if forloop.rindex > 2 %}
+                <a href="{{ author.url }}">{{ author.name }}</a>,
+            {% elsif forloop.rindex == 2 %}
+                <a href="{{ author.url }}">{{ author.name }}</a> and 
+            {% else %}
+                <a href="{{ author.url }}">{{ author.name }}</a>
+            {% endif %}
+        {% endfor %}
+      </h4>
+      <h5><i>{{publication.journal}}</i></h5>
+      <p>{{ publication.content | markdownify }}</p>
+    </li>
+  {% endfor %}
+</ul>

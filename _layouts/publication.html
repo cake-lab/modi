@@ -1,0 +1,34 @@
+---
+title: Publication
+layout: post
+---
+
+<!---
+<h2>{{page.title}}</h1>
+--->
+<h3>
+Authors:
+{% assign authors = site.authors | where_exp: 'item', 'page.authors_list contains item.short_name' %}
+{% for author in authors %}
+    {% if forloop.rindex > 2 %}
+        <a href={{ author.url }}>{{ author.name }}</a>, 
+    {% elsif forloop.rindex == 2 %}
+        <a href={{ author.url }}>{{ author.name }}</a> and 
+    {% else %}
+        <a href={{ author.url }}>{{ author.name }}</a>
+    {% endif %}
+    
+{% endfor %}
+</h3>
+
+<h3>
+    <i>{{page.journal}}</i>
+</h3>
+
+<p>
+    <a href={{ page.pdf_location }}>Download</a>
+</p>
+
+<p>
+    <b><i>Abstract:</i></b>{{ content }}
+</p>
