@@ -19,7 +19,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   MODI is a project aimed at improving deep inference for mobile devices.
   It does this by intelligently deciding between on-device and cloud-based inference
   as well as optimizing inferences whenever possible.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/modi" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
 github_username:  cake-lab
