@@ -8,6 +8,6 @@ title: Applications
   * Currently there are no applications.  Please check back soon!
 {% else %}
     {% for application in site.applications %}
-  * [{{application.title}}]({{application.url}})
+  * [{{application.title}}]({{application.url | relative_url}})
     {% endfor %}
 {% endif %}

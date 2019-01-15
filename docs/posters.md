@@ -8,6 +8,6 @@ title: Posters
   * Currently there are no posters.  Please check back soon!
 {% else %}
     {% for poster in site.posters %}
-  * [{{poster.title}}]({{poster.url}})
+  * [{{poster.title}}]({{poster.url | relative_url}})
     {% endfor %}
 {% endif %}

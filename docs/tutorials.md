@@ -8,6 +8,6 @@ title: Tutorials
   * Currently there are no tutorials.  Please check back soon!
 {% else %}
     {% for tutorial in site.tutorials %}
-  * [{{tutorial.title}}]({{tutorial.url}})
+  * [{{tutorial.title}}]({{tutorial.url | relative_url}})
     {% endfor %}
 {% endif %}

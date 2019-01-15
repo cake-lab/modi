@@ -14,11 +14,11 @@ Cake Lab is based at Worcester Polytechnic Institute
 
 ## Principal Investigators
 {% for author in pi_list %}
-  * [{{author.name}}]({{author.url}}), {{author.role.title}} @ {{author.organizaton_short}} 
+  * [{{author.name}}]({{author.url | relative_url}}), {{author.role.title}} @ {{author.organizaton_short}} 
 {% endfor %}
 
 ## Students
 {% for author in phd_list %}
-  * [{{author.name}}]({{author.url}}), {{author.role.title}} @ {{author.organizaton_short}}  
+  * [{{author.name}}]({{author.url | relative_url}}), {{author.role.title}} @ {{author.organizaton_short}}  
 {% endfor %}
 

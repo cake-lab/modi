@@ -8,6 +8,6 @@ title: Videos
   * Currently there are no videos.  Please check back soon!
 {% else %}
     {% for video in site.videos %}
-  * [{{video.title}}]({{video.url}})
+  * [{{video.title}}]({{video.url | relative_url}})
     {% endfor %}
 {% endif %}

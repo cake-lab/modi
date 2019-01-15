@@ -7,10 +7,10 @@ layout: page
 
 ## News
 {% for post in site.posts limit: 10 %}
-  * **{{ post.date | date_to_string}} - [{{ post.title }}]({{post.url}})** - {{ post.excerpt | strip_html }}
+  * **{{ post.date | date_to_string}} - [{{ post.title }}]({{post.url | relative_url}})** - {{ post.excerpt | strip_html }}
 {% endfor %}
 {% if site.posts.size > 10 %}
-  * [Click to see more news](/news.html)
+  * [Click to see more news](news.html)
 {% endif %}
 
 {% assign sorted_publications = site.publications | sort: 'date_published'  %}
@@ -19,7 +19,7 @@ layout: page
 {: .post-list-heading}
 
 {% for publication in sorted_publications %}
-* **[{{publication.title}}]({{publication.url}})**. *{{publication.authors}}*. {{publication.journal}}.
+* **[{{publication.title}}]({{publication.url | relative_url}})**. *{{publication.authors}}*. {{publication.journal}}.
 {% endfor %}
 {% endif %}
 
@@ -27,7 +27,7 @@ layout: page
 {% if sorted_tutorials.size > 0 %}
 ## Tutorials
 {% for tutorial in sorted_tutorials %}
-* **[{{tutorial.title}}]({{tutorial.url}})**. *{{tutorial.authors}}*. {{tutorial.journal}}.
+* **[{{tutorial.title}}]({{tutorial.url | relative_url}})**. *{{tutorial.authors}}*. {{tutorial.journal}}.
 {% endfor %}
 {% endif %}
 
@@ -35,7 +35,7 @@ layout: page
 {% if sorted_applications.size > 0 %}
 ## Applications
 {% for application in sorted_applications %}
-* **[{{application.title}}]({{application.url}})**. *{{application.authors}}*. {{application.journal}}.
+* **[{{application.title}}]({{application.url | relative_url}})**. *{{application.authors}}*. {{application.journal}}.
 {% endfor %}
 {% endif %}
 
@@ -43,6 +43,6 @@ layout: page
 {% if sorted_videos.size > 0 %}
 ## Videos
 {% for video in sorted_videos %}
-* **[{{video.title}}]({{video.url}})**. *{{video.authors}}*. {{video.journal}}.
+* **[{{video.title}}]({{video.url | relative_url}})**. *{{video.authors}}*. {{video.journal}}.
 {% endfor %}
 {% endif %}
