@@ -9,7 +9,7 @@ title: Publications
 <ul>
   {% for publication in sorted_publications %}
     <li>
-      <h3><a href="{{ publication.url }}">{{ publication.title }}</a></h3>
+      <h3><a href="{{ publication.url | relative_url}}">{{ publication.title }}</a></h3>
       <h4>Authors: 
         {% assign authors = site.authors | where_exp: 'item', 'publication.authors_list contains item.short_name' %}
         {% for author in authors %}
